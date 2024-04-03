@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selector</title>
+    <style>
+        
+        /* .parent12 ul li {
+            background-color: rgb(151, 151, 202);
+            color: red;
+        } */
+        
+        /* .parent12 ol li {
+            background-color: rgb(17, 190, 46);
+            color: rgb(238, 241, 37);
+        }
+        ul li {
+            background-color: rgb(243, 106, 52);
+            color: rgb(20, 17, 17);
+        } */
+        /* .parent12{
+            ul:last-child {
+                li:nth-child(3) {
+                background-color: rgb(3, 230, 98);
+                color: rgb(20, 17, 17);
+                }
+            }
+        } */
+        ul{
+            li:nth-of-type(4) {
+                background-color: rgb(3, 230, 98);
+                color: rgb(20, 17, 17);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent12">
+        <div>
+            <ul>
+                <li>Mobile</li>
+                <li>Laptop</li>
+                <li>Chair</li>
+                <li>Pen</li>
+                <li>Bokk</li>
+            </ul>
+            <ol>
+                <li>Pineapple</li>
+                <li>papaya</li>
+                <li>Banana</li>
+                <li>Kiwi</li>
+            </ol>
+            <ul>
+                <li>Tea</li>
+                <span>Tea</span>
+                <li>Coffee</li>
+                <li>Water</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <ul>
+        <li>Mobile</li>
+        <li>Laptop</li>
+        <li>Chair</li>
+        <li>Pen</li>
+        <li>Bokk</li>
+    </ul>
+    <ol>
+        <li>Pineapple</li>
+        <li>papaya</li>
+        <li>Banana</li>
+        <li>Kiwi</li>
+    </ol>
+    <ul>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Water</li>
+    </ul> -->
+</body>
+</html>

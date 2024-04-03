@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selector</title>
+    <style>
+        .parent12 ul {
+            background-color: rgb(11, 11, 238);
+            color: red;
+        }
+        /*  css combinator */
+        .parent12>ul{
+            color: white;
+        }
+        /* adjacent sibling selector */
+        .parent12+ul{
+            color: green;
+        }   
+    </style>
+</head>
+
+<body>
+    <div class="parent12">
+        <div>
+            <ul>
+                <li>Mobile</li>
+                <li>Laptop</li>
+                <li>Chair</li>
+                <li>Pen</li>
+                <li>Bokk</li>
+            </ul>
+            <ol>
+                <li>Pineapple</li>
+                <li>papaya</li>
+                <li>Banana</li>
+                <li>Kiwi</li>
+            </ol>
+        </div>
+        <ul>
+            <li>Tea</li>
+            <li>Coffee</li>
+            <li>Water</li>
+        </ul>
+    </div>
+    <ul>
+        <li>Tea outer</li>
+        <li>Coffee</li>
+        <li>Water</li>
+    </ul>
+</body>
+</html>
