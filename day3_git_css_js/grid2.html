@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid html template</title>
+    <style>
+        .parent{
+            display: grid;
+            grid-auto-rows: 100px;
+            text-align: center;
+        }
+        .header{
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: red;
+        }
+        .menu{
+            background-color: green;
+            grid-row-start: 2;
+            grid-row-end: 4
+        }
+        .main{
+            background-color: blue;
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        .right{
+            background-color: pink;
+            grid-column-start: 3;
+            grid-column-end: 3;
+        }
+        .footer{
+            background-color: yellow;
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <div class="child header">Header</div>
+    <div class="child menu">Menu</div>
+    <div class="child main">Main</div>
+    <div class="child right">Right</div>
+    <div class="child Footer">Footer</div>
+</div>
+</body>
+</html>

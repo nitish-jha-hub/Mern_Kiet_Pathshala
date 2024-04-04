@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position in css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .parent{
+            /* contains its own position */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /* top: 400px;
+            left: 200px; */
+        }
+        .con{
+            /* leave own position */
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 400px;
+            left: 200px;
+        }
+        .footer{
+            /*  */
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">header</div>
+    <div class="con">content</div>
+    <div class="footer">footer</div>
+    <div class="sticky">sticky nav</div>
+
+    <div class="top">move to top</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo</title>
+    <style>
+
+        button::before{
+            content: "click me";
+            color: red;
+        }
+        button::after{
+            content: "click me";
+            color: blue;
+        }
+        button{
+            background-color: rgb(243, 37, 216);
+            color: rgb(8, 8, 8);
+            padding: 10px 20px;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            top: 100px;
+            left: 300px;
+            /* transition-property: scale; */
+            transition-property: scale;
+            transition-timing-function: ease-in-out;
+            transition-duration: 800ms;
+        }
+        button:hover{
+            scale: 1.5;
+            content: "hovered";
+            color: green;
+            background-color: rgb(45, 201, 212);
+        }
+
+        @keyframes myAnimation{
+            from{
+                top: 20px;
+                left: 20px;
+            }
+            to{
+                top: 200px;
+                left: 200px;
+            }
+        }
+        .submit2{
+            animation-duration: 4S;
+            animation-name: myAnimation;
+            animation-timing-function: linear;
+            
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+<body>
+    <button>submit</button>
+    <span class="submit2">submit 2</span>
+</body>
+</html>
