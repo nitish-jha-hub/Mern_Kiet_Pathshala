@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+</head>
+<body>
+   <div>
+    <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label>        
+        <input type="text" name="fname" id="name" placeholder="First Name"/><br><br>
+        <!-- <input type="text" name="fname" id="name" placeholder="First Name" onchange="fun1(event)" /><br><br> -->
+        <label for="name">last Name:</label>
+        <input type="text" name="lname" id="name" placeholder="Last Name"/><br>
+        <label for="name">age:</label>
+        <input type="text" name="age" id="name" /><br>
+        <label for="name">web:</label>
+        <input type="checkbox" name="name" id="name" value="web" /><br>
+        <label for="name">sport:</label>
+        <input type="checkbox" name="name" id="name" value="sport"/><br>
+        <label for="name">drawing:</label>
+        <input type="checkbox" name="name" id="name" value="drawing"/><br>
+        <button onclick="submitForm">send</button>
+    </form>
+   </div> 
+   <script src="script.js"></script>
+</body>
+</html>
