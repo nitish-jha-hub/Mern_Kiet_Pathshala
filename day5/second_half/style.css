@@ -1,0 +1,17 @@
+.card{
+    display: flex;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    width: 30%;
+    background-color: aqua;
+    margin: 10px;
+}
+
+#root{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}

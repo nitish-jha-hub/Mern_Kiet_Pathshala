@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+        // const promise = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('Promise resolved');
+        //     }, 2000);
+        // });
+
+        // promise.then((data) => {
+        //     console.log(data);
+        // });
+
+        const req = fetch('https://dummyjson.com/products/1')
+        const res = req.then(res=>{return res.json()})
+        res.then((res)=>{console.log(res)})
+        
+    // fetch('https://dummyjson.com/products/1')
+    //     .then(res=>res.json())
+    //     .then((data)=>{console.log(data)})
+    </script>
+</head>
+<body>
+    <h2>Promises</h2>
+</body>
+</html>

@@ -121,13 +121,18 @@
 // obj[2] = "hello2";
 // console.log(obj);
 
-const obj1 = {
-    "1": "john",
-    "age": 30,
-    "address": "USA",
-    "greet": function () {
-    console.log("hello from greet function");
-    }
-};
-const x= prompt("Enter the key");
-console.log(obj1[x]);
+// const obj1 = {
+//     "1": "john",
+//     "age": 30,
+//     "address": "USA",
+//     "greet": function () {
+//     console.log("hello from greet function");
+//     }
+// };
+// const x= prompt("Enter the key");
+// console.log(obj1[x]);
+
+
+const a = 11;
+// a = 12; //cant reassign const variable
+console.log(a)
