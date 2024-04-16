@@ -6,3 +6,4 @@ DAY-5 : Async/promises/weatherAPI/NewsAPI Call
 DAY-6 : map/filter/reduce/spread/rest operator/nodeJS
 DAY-7 : Buffer/SSR on NodeJS/FileHandling in Node/http.createserver/req.url/res.write/res.end/res.writeHead
 DAY-8 : url.parse(req.url)/pathname/querry/ExpressJS
+DAY-9 : Nodejs fileHandling,SSR/Express js create Curd operation to db.json
