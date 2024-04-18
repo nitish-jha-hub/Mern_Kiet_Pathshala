@@ -7,6 +7,25 @@ const dbpassword = 'qsFFEKKSwsUrfb9h'
 const dbname = 'kietPathshala'
 const dburl = `mongodb+srv://${dbusername}:${dbpassword}@cluster0.keg6t2n.mongodb.net/${dbname}`
 
+const getProductById = async (req, res) => {
+  try {
+    mongoose.connect(dburl)
+    const reqId = req.params.id;
+    const data = await Product.findOne({ _id: reqId })
+    // console.log(data, typeof (data))
+    res.send({
+      status: 'success',
+      result: 0,
+      data: {
+        products: [data]
+      }
+    })
+  }
+  catch (err) {
+    res.status(400).json({ "status": "failed", message: err.message })
+  }
+}
+
 const getAllProducts = async (req, res) => {
   mongoose.connect(dburl)
   const data = await Product.find()
@@ -53,9 +72,10 @@ const replaceProduct = async (req, res) => {
   try {
     mongoose.connect(dburl)
     const reqId = req.params.id;
-    console.log(reqId)
-    const data = {...req.body, reqId}
-    const result = await Product.findOneAndUpdate({ _id: reqId }, data)
+    const query = req.query
+    console.log(reqId, query)
+    const data = { ...req.body, reqId }
+    const result = await Product.findOneAndUpdate({ _id: query.id }, data)
     res.send({
       status: 'success',
       result: 0,
@@ -73,4 +93,30 @@ const replaceProduct = async (req, res) => {
   }
 }
 
-module.exports = { getAllProducts, addProduct ,replaceProduct}
+const deleteProduct = async (req, res) => {
+  try {
+    mongoose.connect(dburl)
+    const reqId = req.params.id;
+    // const query = req.query
+    // console.log(reqId, query)
+    const result = await Product.findOneAndDelete({ _id: reqId })
+    console.log(result)
+    res.send({
+      status: 'success',
+      result: 0,
+      data: {
+        product: [reqId]
+      }
+    })
+  }
+  catch (error) {
+    res.status(500).send({
+      status: 'error',
+      result: 0,
+      message: error.message
+    })
+  }
+
+}
+
+module.exports = { getAllProducts, addProduct, replaceProduct, deleteProduct, getProductById }
