@@ -8,3 +8,5 @@ DAY-7 : Buffer/SSR on NodeJS/FileHandling in Node/http.createserver/req.url/res.
 DAY-8 : url.parse(req.url)/pathname/querry/ExpressJS
 DAY-9 : Nodejs fileHandling,SSR/Express js create Curd operation to db.json
 DAY-10: Routing, controller, subRouting, get,post,put,delete, app.use(next()),create server log,amazonProject,mongoDB,Scallable,RouteController, Postcontroller 
+Day-11:params,query,CURD, mongoose, try-catch etc
+day-12:
