@@ -1,11 +1,33 @@
 const productModel = require('../models/productsModel.js');
 
 const getAllProducts = async (req, res) => {
-    const products = await productModel.find();
+    // q=req.query
+    const {sort= 'price',page=1,pageSize = 3,fields= 'title', ...q} =req.query
+    // console.log(sort,q)
+    // let products = await productModel.find(q);
+    // let query = productModel.find().find(q).filter(()=>{});    //we can alse use chaining
+    let query = productModel.find();
+    // query = productModel.find();
+    // query = query.sort('price')   //incresing order
+    // query = query.sort('-price')  //decreasin order add - in prefix
+
+    // paination
+    const skip = pageSize*(page-1);
+    const limit = 3;
+    const fieldSTR = fields.split(",").join(" ")
+    query = query.skip(skip).limit(limit).select(fieldSTR)
+
+    query = query.sort(sort)
+    const products = await query;
+    const totalResults = await productModel.countDocuments();
+
     console.log(req.url);
     res.json({
         status: 'success',
         results: products.length,
+        pageSize: pageSize,
+        page: page,
+        totalResults: totalResults,
         data:{
             products,
         }
