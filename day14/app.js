@@ -1,22 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Header from './src/pages/common/navbar/navbar.js';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Navbar from './src/pages/common/Navbar/navbar.js';
+import HomePage from "./src/pages/HomePage/homepage.js";
+import ImageGenerator from './src/pages/ImageGenerator/imageGenerator.js';
 
-const parent = document.getElementById('root');
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <HomePage />,
+    },
+    {
+        path: "/image-generator",
+        element: <ImageGenerator />,
+    }
+]);
+
+const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
 
-// react element
-const Heading = React.createElement('h1', {}, 'Hello World');
-
-// react component
-const Title = ()=>{
-    return <h1>Hello React 3!</h1>;
+const App = ()=>{
+    return <RouterProvider router={router} />;
 }
 
-
-// root.render(Heading);
-// root.render(Title());
-// root.render(<Title />);
-// <Title/> = Title()
-
-root.render(<Header/>);
+root.render(<App />);
