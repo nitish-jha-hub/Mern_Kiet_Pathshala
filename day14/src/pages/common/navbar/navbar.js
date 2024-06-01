@@ -1,15 +1,16 @@
 import React from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return(
         <div className='header-parent-container'>
             <div className='left'>
-                <a href="/">Home</a>
-                <a href="/image-generator">Image Generator</a>
-                <a href="/history">History</a>
-                <a href="/contact">Contact Us</a>
-                <a href="/help">Help</a>
+                <Link href="/">Home</Link>
+                <Link href="/image-generator">Image Generator</Link>
+                <Link href="/history">History</Link>
+                <Link href="/contact">Contact Us</Link>
+                <Link href="/help">Help</Link>
             </div>
             <div className="right">
             </div>

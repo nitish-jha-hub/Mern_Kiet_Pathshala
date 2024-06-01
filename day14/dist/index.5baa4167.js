@@ -2963,13 +2963,15 @@ var _homepageJs = require("./src/pages/HomePage/homepage.js");
 var _homepageJsDefault = parcelHelpers.interopDefault(_homepageJs);
 var _imageGeneratorJs = require("./src/pages/ImageGenerator/imageGenerator.js");
 var _imageGeneratorJsDefault = parcelHelpers.interopDefault(_imageGeneratorJs);
+var _historyJs = require("./src/pages/History/history.js");
+var _historyJsDefault = parcelHelpers.interopDefault(_historyJs);
 var _reactRouterDom = require("react-router-dom");
 const router = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 18
         }, undefined)
     },
@@ -2977,7 +2979,15 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/image-generator",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 16,
+            lineNumber: 17,
+            columnNumber: 18
+        }, undefined)
+    },
+    {
+        path: "/history",
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 21,
             columnNumber: 18
         }, undefined)
     }
@@ -2989,14 +2999,14 @@ const App = ()=>{
         router: router
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 24,
+        lineNumber: 29,
         columnNumber: 12
     }, undefined);
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 27,
+    lineNumber: 32,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3007,7 +3017,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/common/Navbar/navbar.js":"2Xn2v","./src/pages/HomePage/homepage.js":"a7cYD","./src/pages/ImageGenerator/imageGenerator.js":"gdARo","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/common/Navbar/navbar.js":"2Xn2v","./src/pages/HomePage/homepage.js":"a7cYD","./src/pages/ImageGenerator/imageGenerator.js":"gdARo","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/History/history.js":"lkoqp"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -34333,6 +34343,106 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequiree927")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lkoqp":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$840b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$840b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _navbar = require("../common/Navbar/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _react = require("react");
+var _historyPageCss = require("./historyPage.css");
+var _s = $RefreshSig$();
+const HistoryPage = ()=>{
+    _s();
+    // let data = [
+    //     {'id':'1', title:'hello'},
+    //     {'id':'2', title:'world'},
+    // ];
+    const [data, setData] = (0, _react.useState)([]);
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    const getData = async ()=>{
+        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+        const obj = await res.json();
+        // data = obj.products;
+        setData(obj.products);
+        console.log(data);
+    };
+    (0, _react.useEffect)(()=>{
+        getData();
+    }, [
+        searchText
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+                fileName: "src/pages/History/history.js",
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                value: searchText,
+                onChange: (e)=>{
+                    setSearchText(e.target.value);
+                }
+            }, void 0, false, {
+                fileName: "src/pages/History/history.js",
+                lineNumber: 27,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "history-main-container",
+                children: data.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "history-card",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                                children: item.title
+                            }, void 0, false, {
+                                fileName: "src/pages/History/history.js",
+                                lineNumber: 31,
+                                columnNumber: 29
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: item.description
+                            }, void 0, false, {
+                                fileName: "src/pages/History/history.js",
+                                lineNumber: 32,
+                                columnNumber: 29
+                            }, undefined)
+                        ]
+                    }, item.id, true, {
+                        fileName: "src/pages/History/history.js",
+                        lineNumber: 30,
+                        columnNumber: 25
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/pages/History/history.js",
+                lineNumber: 28,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/History/history.js",
+        lineNumber: 25,
+        columnNumber: 9
+    }, undefined);
+};
+_s(HistoryPage, "HVBDfpXXJRTfmtTwpfpbn1a0Aqg=");
+_c = HistoryPage;
+exports.default = HistoryPage;
+var _c;
+$RefreshReg$(_c, "HistoryPage");
+
+  $parcel$ReactRefreshHelpers$840b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../common/Navbar/navbar":"2Xn2v","./historyPage.css":"7tTXO"}],"7tTXO":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequiree927")
 
 //# sourceMappingURL=index.5baa4167.js.map
